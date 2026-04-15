@@ -1,29 +1,29 @@
 pipeline {
-  agent any
-  stages {
-    stage('Checkout') {
-      steps {
-        echo 'Get source code'
-      }
-    }
+    agent any
 
-    stage('Build') {
-      steps {
-        echo 'Compile project'
-      }
-    }
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code...'
+            }
+        }
 
-    stage('Test') {
-      steps {
-        error 'Test failed on purpose'
-      }
-    }
+        stage('Build') {
+            steps {
+                echo 'Building application...'
+            }
+        }
 
-    stage('Deploy') {
-      steps {
-        echo 'Deploy to server/container'
-      }
-    }
+        stage('Test') {
+            steps {
+                error 'Test failed on purpose'
+            }
+        }
 
-  }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+            }
+        }
+    }
 }
